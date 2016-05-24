@@ -1,0 +1,23 @@
+<article class="hadeesListHolder" ng-show="hadeesListHolder">
+    <!-- <header>
+        <h2></h2>
+    </header> -->
+    <main>
+        <!-- Hadees List -->
+        <div class="list-group">
+            <a class="list-group-item hadeesList" ng-repeat="list in hadeesList" ng-click="openHadees(hadeesName+'_'+$index+'_'+list)">
+                <span ng-bind-html="list"></span>
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </a>
+        </div>
+    </main>
+</article>
+
+<article class="hadeesTopicHolder">
+    <main>
+        <div class="hadeesTopic" ng-repeat="content in hadeesContent">
+            <div class="hadeesVerses" ng-bind-html="content.verses"></div>
+            <div class="hadeesChapter" ng-bind-html="content.chapter"></div>
+        </div>
+    </main>
+</article>

@@ -1,0 +1,28 @@
+<div class="prayerTiming table-responsive">          
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>தொழுகை</th>
+        <th>பாங்கு</th>
+        <th>ஜாமத்</th>        
+		<th>முன் சுன்னத்</th>
+		<th>பஃர்ள்</th>
+        <th>பின் சுன்னத்</th>
+        <th>நஃபீல்</th>
+		<th>வஃஜூப்</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="timing in prayer.prayerTiming">
+		<td>{{timing.name}}</td>
+		<td>{{timing.azaan}}</td>
+		<td>{{timing.jamath}}</td>
+		<td>{{timing.beforeSunnath}}</td>
+		<td>{{timing.faraz}}</td>
+		<td>{{timing.afterSunnath}}</td>
+		<td>{{timing.nafel}}</td>
+		<td>{{timing.wajib}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

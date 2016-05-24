@@ -1,0 +1,38 @@
+<!-- Login Page -->
+<div class="row" id="loginPage">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+    
+            <div class="panel-heading">Mumeen Login</div>
+
+            <div class="panel-body" ng-controller="loginForm">
+            <form role="form" name="login" novalidate autocomplete="off">
+                
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+                    <input id="test" type="text" name="mobileNo" class="form-control" placeholder="Enter Your Mobile No" required ng-model="loginDetails.mobileNo" only-digits/>
+                </div>
+                <div ng-show="login.$submitted">
+                    <div ng-show="login.mobileNo.$error.required">Enter your mobile no</div>
+                </div>
+                
+                <div class="form-group input-group">
+                    <span class="input-group-addon"><i class="fa fa-location-arrow fa-lg"></i></span>
+                    <select name="area" class="form-control" required ng-model="loginDetails.area" ng-init="loginDetails.area=options[0]" ng-options="option.name for option in options">
+                        <option ng-repeat="option in Options" value="{{option.value}}">{{option.name}}</option>
+                    </select>
+                </div>
+                <div ng-show="login.$submitted">
+                    <div ng-show="login.area.$untouched || login.area.$pristine">Enter your Area</div>
+                </div>
+			     
+                <a href="#Register" class="register">Register</a>
+                
+                <input type="submit" class="btn btn-success" value="Login" ng-click="login.$valid && loginSubmit(loginDetails)"/>
+                
+            </form>
+            </div>
+    
+        </div>
+    </div>
+</div>

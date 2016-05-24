@@ -1,0 +1,201 @@
+/* Font-face Icons */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'GlyphiconsHalflings';
+  src: url("../fonts/glyphicons-halflings-regular.eot");
+  src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Open-Sans-regular';
+  src: url("../fonts/Open-Sans-regular/Open-Sans-regular.eot");
+  src: url("../fonts/Open-Sans-regular/Open-Sans-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans-regular/Open-Sans-regular.woff") format("woff"), url("../fonts/Open-Sans-regular/Open-Sans-regular.ttf") format("truetype"), url("../fonts/Open-Sans-regular/Open-Sans-regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Open-Sans-semibold';
+  src: url("../fonts/Open-Sans-600/Open-Sans-600.eot");
+  src: url("../fonts/Open-Sans-600/Open-Sans-600.eot?#iefix") format("embedded-opentype"), url("../fonts/Open-Sans-600/Open-Sans-600.woff") format("woff"), url("../fonts/Open-Sans-600/Open-Sans-600.ttf") format("truetype"), url("../fonts/Open-Sans-600/Open-Sans-600.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Theneeuni';
+  src: url("../fonts/theneeuni.eot");
+  src: url("../fonts/theneeuni.eot?#iefix") format("embedded-opentype"), url("../fonts/theneeuni.woff") format("woff"), url("../fonts/theneeuni.ttf") format("truetype"), url("../fonts/theneeuni.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.container{
+    padding:0;
+}
+/* header syles */
+.header{
+    margin-bottom:0px;
+}
+
+/* login page styles */
+#loginPage .panel .panel-heading, #signUpPage .panel .panel-heading{
+    font-family: 'Open-Sans-semibold';
+    font-size:20px;
+    font-weight: normal;
+}
+#loginPage .panel .panel-body .form-group, #signUpPage .panel .panel-body .form-group {
+  font-family: 'Open-Sans-regular';
+  font-size: 16px;
+  margin-bottom: 10px; }
+
+#loginPage .panel .panel-body .form-group + div, #signUpPage .panel .panel-body .form-group + div {
+  font-family: 'Open-Sans-regular';
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: red; }
+
+#loginPage .panel .panel-body .form-group .form-control, #signUpPage .panel .panel-body .form-group .form-control {
+  padding: 0 5px;
+  border: 1px solid #dddddd;
+  outline: 0;
+  box-shadow: none;
+  height: 40px; }
+
+#loginPage input[type="submit"]{
+    float:left;
+    margin-top:15px;
+}
+#loginPage .register{
+    float: right;    
+    padding: 20px 10px 0 0;
+    text-decoration: underline;
+}
+#signUpPage input[type="submit"]{
+    margin-top:15px;
+}
+/*# sourceMappingURL=style.css.map */
+
+/* overwriting Angular Boostrap Menu Navigation Bar */
+div.navbar-collapse.collapse {
+	display: block;
+	overflow: hidden;
+	max-height: 0px;
+	-webkit-transition: max-height .3s ease;
+	-moz-transition: max-height .3s ease;
+	-o-transition: max-height .3s ease;
+	transition: max-height .3s ease;
+}
+div.navbar-collapse.collapse.in {
+	max-height: 2000px;
+}
+
+/* hadees of the day styles */
+.hadeesDay{
+	position:relative;
+	left:0;
+	right:0;
+	margin:0 auto;
+	width:98%;
+	height:auto;
+	padding:10px;
+	background-color:#FF4330;
+	border-radius:6px;
+	color:#FFF;
+	font-family: 'Theneeuni';
+	font-size:14px;
+}
+.hadeesDay header{
+	text-align:center;
+	padding-bottom:10px;	
+}
+.hadeesDay hr{
+	margin-top:0px;
+	margin-bottom:10px;
+}
+.hadeesDay section div{
+	padding-bottom:10px;
+	text-align:justify;
+}
+.hadeesDay section .book{
+	text-align:right;
+}
+
+/* prayer timing styles */
+.prayerTiming{
+	position:relative;
+	left:0;
+	right:0;
+	margin:0 auto;
+	width:98%;
+	height:auto;
+}
+.prayerTiming table{	
+	width:100%;
+	height:auto;	
+	font-family: 'Theneeuni';
+	font-size:15px;
+	text-align:center;	
+}
+.prayerTiming table thead{
+	background-color:#A8CC46;
+	color:#FFF;	
+}
+.prayerTiming table thead tr > th{
+	text-align:center;
+}
+.prayerTiming table tbody tr{
+	background-color:#E3EEC4;
+}
+.prayerTiming table tbody tr  > td{
+	border:1px solid #d3e3a5;
+}
+
+/* Hadees List Styles */
+.hadeesList{
+    position: relative;
+    width: 100%;
+    padding: 12px 10px 12px 15px;
+    background-color: #EDEDED;
+    border: 1px solid #DDDDDD;
+    font-family: 'Theneeuni';
+    font-size: 14px;
+    font-weight:600;
+}
+.hadeesList span:last-child{
+    position:relative;
+    top: 4px;
+    font-family: 'GlyphiconsHalflings';
+    float: right;
+    vertical-align: middle;
+}
+.hadeesTopicHolder{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+.hadeesTopic > .hadeesVerses {
+    font-family: 'Theneeuni';
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+    text-align: left;
+}
+.hadeesTopic > .hadeesVerses .lesson{
+    color:#808080;
+    border-bottom:2px dotted #EEE;
+    padding-bottom:5px;
+}
+.hadeesTopic > .hadeesChapter{
+    font-family: 'Theneeuni';
+    font-size: 16px;
+    font-weight: bold;
+    color:#555;
+    text-align:right;
+    padding:10px 0px;
+}

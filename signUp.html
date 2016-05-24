@@ -1,0 +1,44 @@
+<!-- Signup form start -->
+      <div class="row" id="signUpPage">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>Register Yourself</strong>
+          </div>
+          <div class="panel-body" ng-controller="signUpForm">
+            <form role="form" name="signUp" novalidate autocomplete="off">
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-lg"></i></span>
+                <input type="text" name="userName" class="form-control" placeholder="Enter Your Name" required ng-model="signUpDetails.userName" only-Alpha/>
+              </div>
+              <div ng-show="signUp.$submitted">
+                <div ng-show="signUp.userName.$error.required">Tell us your name</div>
+              </div>
+
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-mobile-phone fa-2x"></i></span>
+                <input type="tel" name="mobileNo" class="form-control" placeholder="Enter Your Mobile Number" maxlength="10" required ng-model="signUpDetails.mobileNo" only-digits/>
+              </div>
+              <div ng-show="signUp.$submitted">
+                <div ng-show="signUp.mobileNo.$error.required">Tell us your mobile number</div>
+              </div>
+
+              <div class="form-group input-group">
+                <span class="input-group-addon"><i class="fa fa-location-arrow fa-lg"></i></span>
+                <select name="area" class="form-control" required ng-model="signUpDetails.area" ng-init="signUpDetails.area=options[0]" ng-options="option.name for option in options">
+					<option ng-repeat="option in Options" value="{{option.value}}">{{option.name}}</option>
+				</select>				
+              </div>
+			  <div ng-show="signUp.$submitted">
+                <div ng-show="signUp.area.$untouched || signUp.area.$pristine">Tell us your Area</div>
+              </div>
+			  
+              <input type="submit" class="btn btn-success" value="Register Me" ng-click="signUp.$valid && signUpSubmit(signUpDetails)"/>
+              <hr />
+              Already Registered ?  <a href="#Login">Login here</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Signup form end -->

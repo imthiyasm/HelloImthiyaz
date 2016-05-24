@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="description" content="This application is useful to know the update timing of prayer" />
+    <meta name="keyword" content="mosque, prayer" />
+    <meta name="author" content="imthiyas" />
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <title>Mosque Application</title>
+
+    <!-- <link href="css/lib/ionic.min.css" rel="stylesheet"> -->
+    <link href="css/lib/font-awesome.min-4.1.0.css" rel="stylesheet">
+    <link href="css/lib/bootstrap.min-3.3.6.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="cordova_plugins.js"></script>
+
+    <!-- ionic/angularjs/bootstrap js -->	
+    <script src="js/lib/angular.min-1.5.2.js"></script>
+	<script src="js/lib/angular-sanitize.min-1.5.2.js"></script>	
+    <script src="js/lib/angular-route.min-1.5.3.js"></script>
+	<script src="js/lib/angular-ui-router.min-0.2.18.js"></script>
+    <script src="js/lib/angular-local-storage.min.js"></script>
+	<script src="js/lib/ui-bootstrap-tpls-0.9.0.min.js"></script>
+    <!-- <script src="js/lib/ionic.bundle.min.js"></script> -->
+
+    <script type="text/javascript">
+        var platform = current_Date = networkStatus = null;
+        if (window.cordova) {
+            document.addEventListener("deviceready", function() {
+                //Check device platform
+                platform = device.platform;
+
+                //Get current device date
+                navigator.globalization.dateToString(
+                    new Date(),
+                    function (date) {
+                        current_Date = date.value
+                        current_Date = current_Date.split('/')[0];
+                        current_Date = current_Date.replace(/^0+/, '')
+                    },
+                    function() {
+                        alert('Error getting dateString\n');
+                    },
+                    { formatLength: 'short', selector: 'date' }
+                );
+
+                //Check network connection
+                networkStatus = checkConnection();
+
+                angular.element(document).ready(function () {
+                    angular.bootstrap(document.body, ["mosque"]);
+                });
+            }, false);
+        }else{
+            angular.element(document).ready(function () {
+                angular.bootstrap(document.body, ["mosque"]);
+             });
+        }
+
+        function checkConnection() {
+            if( (platform == 'Android') || (platform == 'iOS') ){
+                var networkState = (navigator.connection.type).toUpperCase();
+            }else if ( (platform == 'WinCE') || (platform == 'Win32NT') ){
+                var networkState = (Connection.CELL).toUpperCase();
+            }else{
+            }
+            if( (networkState == 'WIFI') || (networkState == 'CELL_2G') || (networkState == 'CELL_3G') || (networkState == 'CELL_4G') || (networkState == 'CELL') ){
+                return 'onLine';
+            }else{
+                return 'offLine';
+            }
+        }
+
+    </script>
+  </head>
+
+  <body class="platform-android platform-cordova platform-webview">
+    <div class="container" ng-controller="mainActivity">
+		<!-- Header Content -->
+		<div ng-include="'partials/header.html'" ng-show="headerView"></div>
+		
+		<!-- Main Content -->
+		<div ng-view></div>
+	</div>
+
+    <!-- your app's JS -->
+    <script src="js/app.js"></script>
+    
+    <!-- Directives JS -->
+    <script src="js/directives/directives.js"></script>
+    
+    <!-- Services JS -->
+    <script src="js/services/common-activity-services.js"></script>
+    <script src="js/services/area-selection-services.js"></script>
+    
+    <!-- Controller JS -->  
+    <script src="js/controller/login-signup-ctrl.js"></script>
+	<script src="js/controller/mainActivity-ctrl.js"></script>
+    <script src="js/controller/hadees-of-the-day-ctrl.js"></script>
+    <script src="js/controller/hadees.js"></script>
+	<script src="js/controller/prayer-timing-ctrl.js"></script>	
+	
+  </body>
+</html>
